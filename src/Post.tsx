@@ -7,17 +7,18 @@ type Post = {
 };
 function Posts() {
   const [postList, setPostList] = useState<Post[]>([]);
-  async function getPosts() {
-    const {
-      data,
-    }: {
-      data: {
-        posts: Post[];
-      };
-    } = await axios.get("https://dummyjson.com/posts");
-    setPostList(data.posts);
-  }
+    async function getPosts() {
+      const {
+        data,
+      }: {
+        data: {
+          posts: Post[];
+        };
+      } = await axios.get("https://dummyjson.com/posts");
+      setPostList(data.posts);
+    }
   useEffect(() => {
+
     getPosts();
   }, []);
   return (

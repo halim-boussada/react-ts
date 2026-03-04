@@ -1,9 +1,12 @@
-import Posts from "./Post"
+import UsersList from "./UsersList"
 
-function App() {  
+function App() {
+const loader = false 
   return (
    <div>
-    <Posts />
+
+    {loader ? <h1>loading ..</h1> : null }
+    <UsersList />
    </div>
   )
 }
